@@ -353,10 +353,4 @@ Type `yes` to confirm. This deletes the DynamoDB table (and all data), Lambda fu
 
 ---
 
-## Security Notes
 
-- No AWS credentials, API keys, or secrets are stored in this repository
-- The `.gitignore` excludes `.tfstate`, `.tfvars`, and `build/` files (which may contain runtime values)
-- The Lambda function uses the IAM execution role — no hardcoded credentials in code
-- The website uses a `{{API_GATEWAY_URL}}` placeholder that is replaced at deploy time by `deploy-amplify.sh`
-- IAM policies are scoped to specific resources (DynamoDB table, CloudWatch log group) rather than account-wide
