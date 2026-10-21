@@ -351,6 +351,32 @@ terraform destroy
 
 Type `yes` to confirm. This deletes the DynamoDB table (and all data), Lambda function, API Gateway, IAM role, CloudWatch log group, and Amplify app. This is irreversible.
 
+
+Clean-up Steps on Console
+
+To avoid ongoing AWS charges, remember to delete the resources you created:
+
+    Amplify App
+        Go to AWS Amplify Console
+        Select your app → Actions → Delete App
+    API Gateway
+        Go to API Gateway Console
+        Select your FunfactsAPI → Actions → Delete
+    Lambda Function(s)
+        Go to Lambda Console
+        Delete functions you created (e.g., CloudFunFacts)
+        Clean up associated log groups in CloudWatch Logs (/aws/lambda/...)
+    DynamoDB Table
+        Go to DynamoDB Console
+        Select the CloudFacts table → Actions → Delete table
+    IAM Role (Optional)
+        Go to IAM > Roles
+        Delete the custom role created for your Lambda (e.g., CloudFunFacts-role-xyz)
+    CloudWatch Logs
+        Go to CloudWatch > Log groups
+        Delete Lambda function log groups (they start with /aws/lambda/)
+
+
 ---
 
 
